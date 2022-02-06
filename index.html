@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title> Najmniejsza wspólna wielokrotność - algorytm </title>
+	
+	<meta name="description" content="Opis w Google" />
+	<meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku" />
+
+	
+	<style>
+body{
+	padding-left:100px;
+	padding-right: 100px;
+	font-family: arial;
+	}
+
+	</style>
+	
+<script>
+	function f1()
+	{
+		var a = document.getElementById("a").value;
+		var b = document.getElementById("b").value;
+		var i;
+		var s = "";
+		
+		for(i=a; i<=b; i++) s = s + i + " ";
+		
+		document.getElementById("wynik").innerHTML = s;
+		
+	}
+
+</script>
+	
+</head>
+
+<body>
+<h1>Znajdź najmniejszą wspólną wielokrotność dwóch liczb naturalnych a, b  ; </h1>
+
+
+<center>
+<h2>Schemat blokowy</h2>
+<img src = "img/sb.jpg">
+</center>
+
+<h2>Kod cpp</h2>
+
+<td valign="top" class="listing" valign="top"><b><span class="t">C++</span></b><hr color="#FF0000"><pre id="cpp1">// NWW
+
+
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main( )
+{
+  unsigned long long a, b, t, ab;
+
+  cin &gt;&gt; a &gt;&gt; b;
+  ab = a * b;
+  while( b )
+  {
+    t = b;
+    b = a % b;
+    a = t;
+  }
+  ab /= a;
+  cout &lt;&lt; ab &lt;&lt; endl &lt;&lt; endl;
+  return 0;
+}</pre></td>
+</pre>
+<center>
+<h2>Skrypt JS</h2>
+<p>Skrypt JS drukuje najmniejszą wspólną wielokrotność liczb a, b</p><br>
+<table border="0" cellpadding="4" style="border-collapse: collapse">
+		
+	</table></div>
+<div align="center">
+  <form class="listing"name="frm1">
+    <div align="center">
+    <b>Najmniejsza Wspólna Wielokrotność<br></b> <br>
+    <p>a = 
+    <input type="text" name="inp_a" size="10" value="0" style="text-align: right"><br>
+	b = 
+    <input type="text" name="inp_b" size="10" value="0" style="text-align: right"><br>
+    <br><input type="button" value="Wykonaj" name="B1" onclick="main1 ();"></p>
+    <hr color="#808080" size="1" width="80%" noshade>
+    <p id="tx1">...</p>
+      
+	</div>
+      
+<script type=text/javascript language=javascript>
+
+
+function main1 ()
+{
+  var a,b,t,ab,s;
+
+  a = parseInt (document.frm1.inp_a.value);
+  b = parseInt (document.frm1.inp_b.value);
+  if(!isNaN (a) && !isNaN (b))
+  {
+    ab = a * b;
+    while(b)
+    {
+      t = b;
+      b = a % b;
+      a = t;
+    }
+    s = ab / a;
+  }
+  else s = "Złe dane wejściowe!";
+  document.getElementById ("tx1").innerHTML = s;
+}
+
+</script>     
+    </form>
+  </div>
+</div>
+
+ 
+</center>
+<br>
+<h2>Skrypt JS</h2>
+<pre style="margin: 0; line-height: 125%">&lt;script&gt;
+	<span style="color: #000080; font-weight: bold">function</span> f1()
+	{
+		
+
+function main1 ()
+{
+  var a,b,t,ab,s;
+
+  a = parseInt (document.frm1.inp_a.value);
+  b = parseInt (document.frm1.inp_b.value);
+  if(!isNaN (a) && !isNaN (b))
+  {
+    ab = a * b;
+    while(b)
+    {
+      t = b;
+      b = a % b;
+      a = t;
+    }
+    s = ab / a;
+  }
+  else s = "Złe dane wejściowe!";
+  document.getElementById ("tx1").innerHTML = s;
+}
+
+</script>   
+	}
+
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+</body>
+</html>
