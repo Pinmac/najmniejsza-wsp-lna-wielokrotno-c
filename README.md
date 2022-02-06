@@ -1,0 +1,1 @@
+# najmniejsza-wsp-lna-wielokrotno-c
